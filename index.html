@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Vraple</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -17,10 +17,6 @@
                 padding-top: 60px;
                 padding-bottom: 40px;
             }
-
-            searchbox {
-
-            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/style.css">
@@ -28,7 +24,6 @@
     <body>
 
         <div class="container">
-
         	<div class="row">
         		<div class="span3 offset5 searchbox">
         			<h1>Vraple</h1>
@@ -77,9 +72,13 @@
 
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <!-- normally the following line does not use "http:", but jquery fails to load when developing on localhost without it. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js"><\/script>')</script>
 
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/vraple.js"></script>
     </body>
 </html>
