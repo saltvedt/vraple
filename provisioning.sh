@@ -20,3 +20,7 @@ ln -s /etc/nginx/sites-available/vagrant /etc/nginx/sites-enabled/vagrant
 
 # Load new configuration
 service nginx reload
+
+# TODO:
+# Turn sendfile off in nginx, because it messes with client side cache.
+
