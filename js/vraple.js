@@ -21,11 +21,11 @@ $(function () {
         vraple: function (query) {
             //parse the query and determine what search engine to send the user
 
-            //anything with an ! in it, obviously not ideal.
-            var duckduckgo = new RegExp(/!/);
+            //matches queries which have !bangs in them
+            var duckduckgo = new RegExp(/!\w{1,}/);
+
             var goto_url;
             var url_data;
-
             if (duckduckgo.test(query)) {
                 goto_url = "http://duckduckgo.com/?q=" + query;
                 url_data = "went_to=duckduckgo&q=" + query;
