@@ -1,15 +1,17 @@
 window.onunload = function () {};
 
 $(function () {
+    "use strict";
+
     window.App = {
         Router: {}
     };
 
     App.Router = Backbone.Router.extend({
         routes: {
-            '':                                 'index',
-            'q=:query':                         'vraple',
-            'went_to=:search_engine&q=:query' : 'search'
+            "":                                 "index",
+            "q=:query":                         "vraple",
+            "went_to=:search_engine&q=:query" : "search"
         },
 
         index: function () {
@@ -32,7 +34,7 @@ $(function () {
                 url_data = "went_to=google&q=" + query;
             }
 
-            //add the params of which search engine we're going to send the user to the history of the browser,
+            //add the params of which search engine we"re going to send the user to the history of the browser,
             //so that when the user hits the back button, we can redirect them to google.
             Backbone.history.navigate(url_data);
             window.location = goto_url;
