@@ -24,9 +24,15 @@ $(function () {
             //matches queries which have !bangs in them
             var duckduckgo = new RegExp(/!\w{1,}/);
 
+            // if it looks like math, it probably is math
+            var wolfram_alpha = new RegExp(/(^\(\d)|(^\d.*\d$)|(\d\)$)/);
+
             var goto_url;
             var url_data;
-            if (duckduckgo.test(query)) {
+            if (wolfram_alpha.test(query)) {
+                goto_url = "https://www.wolframalpha.com/input/?i=" + query;
+                url_data = "went_to=wolfram_alpha&q=" + query;
+            } else if (duckduckgo.test(query)) {
                 goto_url = "http://duckduckgo.com/?q=" + query;
                 url_data = "went_to=duckduckgo&q=" + query;
             } else {
@@ -55,6 +61,9 @@ $(function () {
         }
     });
 
-    App.Router();
+    /*jshint -W031 */
+    new App.Router();
+    /*jshint +W031 */
+
     Backbone.history.start();
 });
