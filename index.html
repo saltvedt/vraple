@@ -11,70 +11,62 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
+        <link href='http://fonts.googleapis.com/css?family=Exo:400,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
         <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/vendor/style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
         <div class="container">
         	<div class="row">
-        		<div class="span3 offset5 searchbox">
-        			<h1>Vraple</h1>
-					<form class="form-search">
-					  <input type="text" class="input-medium search-query">
-					  <button type="submit" class="btn">Search</button>
-					</form>
+        		<div class="span8 offset2 searchbox">
+        			<h1 id="logo">Vraple</h1>
 				</div>
         	</div>
-
+            <div class="row">
+                <div class="span12" style="height:70px;">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6 offset3 searchbox">
+                    <form>
+                      <input type="text" class="search-input">
+                      <button type="submit" class="search-button"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+            </div>
         	<div class="row">
-        		<div class="span12" style="height:100px;">
+        		<div class="span12" style="height:70px;">
         			&nbsp;
         		</div>
         	</div>
-
-        	<div class="page-header">
-			  <h1><small>Fast-forwarding search queries to the intended target</small></h1>
-			</div>
             <div class="row">
-                <div class="span6">
+                <div class="span5 offset1">
                     <h4>What is vraple?</h4>
                     <p>vraple is a search engine tool which saves you time by redirecting you directly to the most appropiate search engine for your query.</p>
                 </div>
-                <div class="span6">
+                <div class="span5">
                     <h4>Why should I use it?</h4>
                     <p>Because most of the time, search engines knows what you want. With vraple, you will save a click nearly everytime you search for something.</p>
                </div>
             </div>
             <div class="row">
-                <div class="span6">
+                <div class="span5 offset1">
                     <h4>What does it actually do?</h4>
                     <p>When you search with vraple, you're immediatly sent to the first search result on google. If you're unhappy with this result and hit the back button, you're sent to a regular google search for that term.</p>
 
 					<p>Other than that, 'mathemathical' queries are sent to wolfram alpha, and queries starting with ! are sent to duck duck go.</p>
                 </div>
-                <div class="span6">
-                    <h4>Does that mean you have access to my search history?</h4>
+                <div class="span5">
+                    <h4>Do you have access to my search history?</h4>
                     <p>No, all handling of search queries are done in the client, and cannot be accessed from the server. However, vraple do log everytime you visit the site.</p>
                 </div>
             </div>
-            <hr />
-            <footer>
-                <p>Created by Saltvedt.</p>
-            </footer>
-
         </div>
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/underscore-min.js"></script>
         <script src="js/vendor/backbone-min.js"></script>
