@@ -4,22 +4,13 @@ $(function () {
     "use strict";
 
     window.App = {
-        Router: {}
+        Router: {},
+        View: {}
     };
 
-    App.Router = Backbone.Router.extend({
-        routes: {
-            "":                                 "index",
-            "q=:query":                         "vraple",
-            "went_to=:search_engine&q=:query" : "search"
-        },
-
-        index: function () {
-            //this is were we display the info on the main page
-        },
-
-        vraple: function (query) {
-            //parse the query and determine what search engine to send the user
+    App.Vraple = {
+        vraple: function(query) {
+             //parse the query and determine what search engine to send the user
 
             //matches queries which have !bangs in them
             var duckduckgo = new RegExp(/!\w{1,}/);
@@ -59,11 +50,53 @@ $(function () {
                 window.location = goto_url;
             }
         }
+    };
+
+    App.View.Index = Backbone.View.extend({
+        tagName: "div",
+
+        events: {
+            "submit #search-button": "vraple",
+            "click #search-button": "vraple"
+        },
+
+        initialize: function() {
+            this.render();
+        },
+
+        render: function() {
+            $(".faq").show();
+            $("#search-box").focus();
+        },
+
+        vraple: function(event) {
+            event.preventDefault();
+            App.Vraple.vraple($("#search-box").val());
+        }
     });
 
-    /*jshint -W031 */
+    App.Router = Backbone.Router.extend({
+        routes: {
+            "":                                 "index",
+            "q=:query":                         "vraple",
+            "went_to=:search_engine&q=:query" : "search"
+        },
+
+        index: function () {
+            new App.View.Index({el: $("#vraple-search")});
+        },
+
+        vraple: function (query) {
+            $("#search-box").val(query);
+            App.Vraple.vraple(query);
+        },
+
+        search: function (search_engine, query) {
+            App.Vraple.search(search_engine, query);
+        }
+    });
+
     new App.Router();
-    /*jshint +W031 */
 
     Backbone.history.start();
 });

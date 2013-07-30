@@ -52,3 +52,7 @@ button.search-button {
 	background-color: #104910;
   	background: linear-gradient(to bottom, #627d4d 0%,#104910 100%); /* W3C */
 }
+
+div.faq {
+	display: none;
+}
