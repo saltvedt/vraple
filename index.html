@@ -10,7 +10,6 @@
         <title>Vraple</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
         <link href='http://fonts.googleapis.com/css?family=Exo:400,900italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
@@ -45,23 +44,24 @@
             <div class="row faq">
                 <div class="span5 offset1">
                     <h4>What is vraple?</h4>
-                    <p>vraple is a search engine tool which saves you time by redirecting you directly to the most appropiate search engine for your query.</p>
+                    <p>Vraple is a wrapper around search engines. It takes your search query and figures out which search engine is the most well suited to handle it.</p>
                 </div>
                 <div class="span5">
                     <h4>Why should I use it?</h4>
-                    <p>Because most of the time, search engines knows what you want. With vraple, you will save a click nearly everytime you search for something.</p>
+                    <p>Because most of the time, you're not searching for information, you're trying to retrieve information you know is available. Search engines should be so good by now that you dont have to look at search results.</p>
                </div>
             </div>
             <div class="row faq">
                 <div class="span5 offset1">
                     <h4>What does it actually do?</h4>
-                    <p>When you search with vraple, you're immediatly sent to the first search result on google. If you're unhappy with this result and hit the back button, you're sent to a regular google search for that term.</p>
-
-					<p>Other than that, 'mathemathical' queries are sent to wolfram alpha, and queries starting with ! are sent to duck duck go.</p>
+                    <p>If the search query ends with an exclamation mark, you are forwarded to the first result on Google. If your search query is mathematical in nature it is sent to WolframAlpha. <!-- Wishful thinking/todo: If it looks like an address, you are sent to Google Maps. If it looks like a phonenumber, it sends you to a lookup service. -->If it contains !bangs, it is sent to DuckDuckGo. Otherwise, it just sends you to regular Google. If Vraple gets it wrong (like sending you to WolframAlpha when you just wanted to Google something), hitting the backbutton will redirect you to Google (if you're using a supported browser).</p>
                 </div>
                 <div class="span5">
                     <h4>Do you have access to my search history?</h4>
                     <p>No, all handling of search queries are done in the client, and cannot be accessed from the server. However, vraple do log everytime you visit the site.</p>
+                    <br />
+                    <h4>How do I start using Vraple?</h4>
+                    <p>Add a new search engine in your browser, using the following URL: http://vraple.com/#q=%s</p>
                 </div>
             </div>
         </div>
