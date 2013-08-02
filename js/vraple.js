@@ -13,19 +13,28 @@ $(function () {
              //parse the query and determine what search engine to send the user
 
             //matches queries which have !bangs in them
-            var duckduckgo = new RegExp(/!\w{1,}/);
+            var duckduckgo = /!\w{1,}/;
 
             // if it looks like math, it probably is math
-            var wolfram_alpha = new RegExp(/(^\(\d)|(^\d.*\d$)|(\d\)$)/);
+            var wolfram_alpha = /(^\(\d)|(^\d.*\d$)|(\d\)$)/;
+
+            // if it ends with !, it should go to first google result
+            var gifl = /.*!$/;
+
+            // if it start with \, it uses ddg's syntax for going to the first search result
+            var difl = /^\\.*/;
 
             var goto_url;
             var url_data;
             if (wolfram_alpha.test(query)) {
                 goto_url = "https://www.wolframalpha.com/input/?i=" + query;
                 url_data = "went_to=wolfram_alpha&q=" + query;
-            } else if (duckduckgo.test(query)) {
+            } else if (duckduckgo.test(query) || difl.test(query)) {
                 goto_url = "http://duckduckgo.com/?q=" + query;
                 url_data = "went_to=duckduckgo&q=" + query;
+            } else if (gifl.test(query)) {
+                goto_url = "https://www.google.com/search?btnI&q=" + query;
+                url_data = "went_to=gifl&q=" + query;
             } else {
                 goto_url = "https://www.google.com/search?q=" + query;
                 url_data = "went_to=google&q=" + query;
